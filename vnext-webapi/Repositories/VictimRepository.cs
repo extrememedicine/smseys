@@ -12,6 +12,10 @@ namespace proj.Repositories
 			get; set;
 		}
 
+		public static void Initial()
+		{
+			victims = new List<Models.Victim>();
+		}
 		public static void Add(Models.Victim victim) {
 			victims.Add(victim);
 		}

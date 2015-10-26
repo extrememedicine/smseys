@@ -11,7 +11,7 @@
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="1*"/>
-			<RowDefinition Height="8*"/>
+			<RowDefinition Height="6*"/>
 		</Grid.RowDefinitions>
 		<TextBlock Margin="10" Style="{StaticResource HeaderTextBlockStyle}">Medicade</TextBlock>
 		<ScrollViewer Grid.Row="1">
@@ -80,9 +80,12 @@
 					<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Blood loss?</Button>
 					<ComboBox x:Name="BleadingLevel" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
 				</Grid>
-				<TextBlock x:Name="output" Margin="10">
+				<TextBlock x:Name="output" Margin="10" TextWrapping="Wrap">
 					
 				</TextBlock>
+				<Button x:Name="copybutton" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+					Copy
+				</Button>
 			</StackPanel>
 		</ScrollViewer>
 

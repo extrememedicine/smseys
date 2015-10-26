@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Data.Html;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -55,14 +57,25 @@ namespace EncoderApp
 			HasMedication.Unchecked += HasMedication_Unchecked;
 			BleadingLevel.SelectionChanged += BleadingLevel_SelectionChanged;
 
+			copybutton.Tapped += Copybutton_Tapped;
+
 
 		}
+
+		private void Copybutton_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			var dataPackage = new DataPackage();			
+			string plainText = HtmlUtilities.ConvertToText(output.Text);
+			dataPackage.SetText(plainText);
+
+			Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(dataPackage);
+        }
 
 		private void StateChanged()
 		{
 			Victim.Name = Name.Text;
 
-			switch (Gender.SelectedValue.ToString()) {
+			switch ( Gender?.SelectionBoxItem?.ToString() ) {
 				case "Male":
 					Victim.Gender = Models.Gender.male;
 					break;
@@ -74,7 +87,7 @@ namespace EncoderApp
 					break;
 			}
 			Victim.Age = Age.Text;
-			switch (UrgencyLevel.SelectedValue.ToString())
+			switch (UrgencyLevel?.SelectionBoxItem?.ToString())
 			{
 				case "Critical Condition":
 					Victim.UrgencyLevel = Models.UrgencyLevel.P1Immediate;
@@ -90,7 +103,7 @@ namespace EncoderApp
 			Victim.HaveWater = (bool)HasWater.IsChecked;
 			Victim.HaveExistingMedication = (bool)HasMedication.IsChecked;
 
-			switch (BleadingLevel.SelectedValue.ToString())
+			switch (BleadingLevel?.SelectionBoxItem?.ToString())
 			{
 				case "Internally":
 					Victim.BleedingLevel = Models.BleedingLevel.Internal;

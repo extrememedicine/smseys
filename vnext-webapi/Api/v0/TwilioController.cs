@@ -16,6 +16,10 @@ namespace proj.Api.v0
 		public object In(Models.Twilio.SmsInbound inbound)
 		{
 			var content = inbound.Body;
+			var data = Models.VictimTools.VictimDecode(content);
+
+			Repositories.VictimRepository.Add(data);
+
 			return new HttpStatusCodeResult(200);
         }
 	}

@@ -23,6 +23,8 @@ namespace proj
 			  .AddJsonFile("config.json");
 			//configuration.AddUserSecrets(); secrets-manager broken on nuget
 
+			Repositories.VictimRepository.Initial();
+
 			Configuration = configuration;
 		}
         public void ConfigureServices(IServiceCollection services)
