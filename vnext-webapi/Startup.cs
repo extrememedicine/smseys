@@ -26,7 +26,7 @@ namespace proj
 			Repositories.VictimRepository.Initial();
 			Repositories.VictimRepository.Add(new Models.Victim
 			{
-				Name = "Permenant Test User",
+				Name = "Persistent Test User 1",
 				Age = "23",
 				Gender = Models.Gender.na,
 				Location = "32.500215 : -5.129792",
@@ -36,6 +36,32 @@ namespace proj
 				HaveExistingMedication = false,
 				BleedingLevel = Models.BleedingLevel.Minor
 				
+			});
+			Repositories.VictimRepository.Add(new Models.Victim
+			{
+				Name = "Persistent Test User 2",
+				Age = "12",
+				Gender = Models.Gender.female,
+				Location = "32.700215 : -5.829792",
+				UrgencyLevel = Models.UrgencyLevel.P1Immediate,
+				HaveFood = true,
+				HaveWater = false,
+				HaveExistingMedication = false,
+				BleedingLevel = Models.BleedingLevel.ExternalCore
+
+			});
+			Repositories.VictimRepository.Add(new Models.Victim
+			{
+				Name = "Persistent Test User 3",
+				Age = "19",
+				Gender = Models.Gender.male,
+				Location = "31.670215 : -4.629792",
+				UrgencyLevel = Models.UrgencyLevel.P3WaitFour,
+				HaveFood = false,
+				HaveWater = true,
+				HaveExistingMedication = false,
+				BleedingLevel = Models.BleedingLevel.ExternalCore
+
 			});
 
 			Configuration = configuration;
