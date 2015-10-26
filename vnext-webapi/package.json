@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "proj",
+  "private": true,
+  "dependencies": {
+	"merge-stream": "latest",
+	"bower": "latest",
+	"rimraf": "latest",
+	"gulp": "latest",
+	"gulp-util": "latest",
+	"gulp-ignore": "latest"
+  },
+  "main": "Gulpfile.js"
+}
