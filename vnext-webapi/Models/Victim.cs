@@ -6,9 +6,9 @@ using Newtonsoft.Json;
 
 namespace proj.Models
 {
-	public class VictimTools
+	public static class VictimTools
 	{
-		public Victim VictimDecode(string encoded)
+		public static Victim VictimDecode(string encoded)
 		{
 			var stage = System.Convert.FromBase64String(encoded);
 			var plain = System.Text.Encoding.UTF8.GetString(stage);
@@ -16,7 +16,7 @@ namespace proj.Models
 			return decoded;
 		}
 
-		public string VictimEncode(Victim victim)
+		public static string VictimEncode(Victim victim)
 		{
 			var plain = JsonConvert.SerializeObject(victim);
 			var bytes = System.Text.Encoding.UTF8.GetBytes(plain);
@@ -30,7 +30,7 @@ namespace proj.Models
 		public string Location { get; set; }
 		public string Name { get; set; }
 		public string Age { get; set; }
-		public string Gender { get; set; }
+		public Gender Gender { get; set; }
 		public UrgencyLevel UrgencyLevel {get; set;} 
 		public bool HaveFood { get; set; }
 		public bool HaveWater {	get; set; }
@@ -38,6 +38,11 @@ namespace proj.Models
 		public BleedingLevel BleedingLevel	{ get; set; }
 
 	}
+	public enum Gender
+	{
+		male, female, na
+	}
+
 	public enum UrgencyLevel
 	{
 		P1Immediate, P2WaitHour, P3WaitFour

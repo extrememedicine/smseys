@@ -7,8 +7,84 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 	
-	<!-- what is databinding --> 
+	<!-- what is databinding -->
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<gri
+		<Grid.RowDefinitions>
+			<RowDefinition Height="1*"/>
+			<RowDefinition Height="8*"/>
+		</Grid.RowDefinitions>
+		<TextBlock Margin="10" Style="{StaticResource HeaderTextBlockStyle}">Medicade</TextBlock>
+		<ScrollViewer Grid.Row="1">
+			<StackPanel>
+				<Grid Height="50">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Name</Button>
+					<TextBox x:Name="Name" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+				</Grid>
+				<Grid Height="50">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+						<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Gender</Button>
+						<ComboBox x:Name="Gender" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+				</Grid>
+				<Grid Height="50">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Age</Button>
+					<TextBox x:Name="Age" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+				</Grid>
+				<Grid Height="50">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Urgency</Button>
+					<ComboBox x:Name="UrgencyLevel" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+				</Grid>
+				<Grid Height="50">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Have Food?</Button>
+					<ToggleButton x:Name="HasFood" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+				</Grid>
+				<Grid Height="50">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Have Water?</Button>
+					<ToggleButton x:Name="HasWater" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+				</Grid>
+				<Grid Height="50">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Lost medication?</Button>
+					<ToggleButton x:Name="HasMedication" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+				</Grid>
+				<Grid Height="50">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="5*"/>
+					</Grid.ColumnDefinitions>
+					<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" IsEnabled="True" Grid.Column="0">Blood loss?</Button>
+					<ComboBox x:Name="BleadingLevel" Grid.Column ="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5"/>
+				</Grid>
+				<TextBlock x:Name="output" Margin="10">
+					
+				</TextBlock>
+			</StackPanel>
+		</ScrollViewer>
+
 	</Grid>
 </Page>
