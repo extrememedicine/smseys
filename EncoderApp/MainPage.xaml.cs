@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Data.Html;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -71,11 +72,12 @@ namespace EncoderApp
 			Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(dataPackage);
         }
 
-		private void StateChanged()
+		private async void StateChanged()
 		{
 			Victim.Name = Name.Text;
 
-			switch ( Gender?.SelectionBoxItem?.ToString() ) {
+			switch (Gender?.SelectionBoxItem?.ToString())
+			{
 				case "Male":
 					Victim.Gender = Models.Gender.male;
 					break;
@@ -118,6 +120,14 @@ namespace EncoderApp
 					Victim.BleedingLevel = Models.BleedingLevel.Minor;
 					break;
 			}
+
+			var geo = new Geolocator();
+			Geoposition pos = await geo.GetGeopositionAsync();
+			double lat = pos.Coordinate.Point.Position.Latitude;
+			double longt = pos.Coordinate.Point.Position.Longitude;
+
+			Victim.Location = lat.ToString() + " : " + longt.ToString();
+
 
 			output.Text = Models.VictimTools.VictimEncode(Victim);
 		}

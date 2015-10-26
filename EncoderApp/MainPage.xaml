@@ -13,7 +13,7 @@
 			<RowDefinition Height="1*"/>
 			<RowDefinition Height="6*"/>
 		</Grid.RowDefinitions>
-		<TextBlock Margin="10" Style="{StaticResource HeaderTextBlockStyle}">Medicade</TextBlock>
+		<TextBlock Margin="10,0,10,10" Style="{StaticResource HeaderTextBlockStyle}">Send alert</TextBlock>
 		<ScrollViewer Grid.Row="1">
 			<StackPanel>
 				<Grid Height="50">

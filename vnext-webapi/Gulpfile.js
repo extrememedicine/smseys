@@ -48,4 +48,4 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('build', ['clean', 'styles', 'scripts', 'bootstrap', 'jquery']);
+gulp.task('build', ['styles', 'scripts', 'bootstrap', 'jquery']);

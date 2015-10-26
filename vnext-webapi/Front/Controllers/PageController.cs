@@ -13,7 +13,11 @@ namespace proj.Front.controller
         // GET: /<controller>/
         public IActionResult Index()
         {
-			return View("Index");
+			return View("Index", Repositories.VictimRepository.GetAll());
         }
+		public IActionResult Dash()
+		{
+			return View("Dash", Repositories.VictimRepository.GetAll());
+		}
     }
 }

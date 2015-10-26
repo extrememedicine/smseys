@@ -24,6 +24,19 @@ namespace proj
 			//configuration.AddUserSecrets(); secrets-manager broken on nuget
 
 			Repositories.VictimRepository.Initial();
+			Repositories.VictimRepository.Add(new Models.Victim
+			{
+				Name = "Permenant Test User",
+				Age = "23",
+				Gender = Models.Gender.na,
+				Location = "32.500215 : -5.129792",
+				UrgencyLevel = Models.UrgencyLevel.P2WaitHour,
+				HaveFood = true,
+				HaveWater = false,
+				HaveExistingMedication = false,
+				BleedingLevel = Models.BleedingLevel.Minor
+				
+			});
 
 			Configuration = configuration;
 		}
