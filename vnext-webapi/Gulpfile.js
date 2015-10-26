@@ -33,6 +33,11 @@ gulp.task('scripts', function () {
 		.pipe(gulp.dest('./wwwroot/js/'));
 });
 
+gulp.task('img', function () {
+	return gulp.src('./Front/Img/*')
+		.pipe(gulp.dest('./wwwroot/img/'));
+});
+
 gulp.task('bootstrap', function(){
 	return gulp.src('./bower_components/bootstrap/dist/**/*')
 		.pipe(gulp.dest('./wwwroot/'));
@@ -48,4 +53,4 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('build', ['styles', 'scripts', 'bootstrap', 'jquery']);
+gulp.task('build', ['styles', 'scripts', 'bootstrap', 'jquery', 'img']);
