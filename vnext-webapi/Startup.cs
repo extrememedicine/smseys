@@ -10,6 +10,7 @@ using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
+using Newtonsoft.Json;
 
 namespace proj
 {
@@ -43,7 +44,6 @@ namespace proj
 			{
 				var s = ("[Pipeline0] Request to:" + context.Request.Path);
 				logger.LogInformation(s);
-				Debug.WriteLine(s);
 				await next();
 			});
 
