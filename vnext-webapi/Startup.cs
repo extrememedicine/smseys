@@ -28,7 +28,7 @@ namespace proj
 			{
 				Name = "Persistent Test User 1",
 				Age = "23",
-				Gender = Models.Gender.na,
+				Gender = Models.Gender.female,
 				Location = "32.500215 : -5.129792",
 				UrgencyLevel = Models.UrgencyLevel.P2WaitHour,
 				HaveFood = true,
