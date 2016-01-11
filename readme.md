@@ -1,9 +1,7 @@
 # SMSey (Extreme Medicine Hackathon)
 (Built to demo in under 8 hours)
-
----
  
-### Contributors
+Contributors
 ---
  
 * Kaelan Fouwels
@@ -20,7 +18,7 @@ This was done by implementing three components:
 
 For the demo, the scenario of refugees needing medical attention in unknown countries/locations was used, but this could be replaced as desired. For example, tracking amd coordinating a medical team in the field when conventional infrastructure is not available.
  
-###Running
+Running
 ---
 
 Install git, dnvm, vnext beta4, and npm
